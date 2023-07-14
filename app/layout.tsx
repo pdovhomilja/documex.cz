@@ -20,8 +20,8 @@ export default function RootLayout({
     <html lang="en">
       <body className="flex w-full max-w-7xl h-screen flex-col mx-auto overflow-hidden ">
         <Header />
-        <div className="w-full h-full  p-10 overflow-auto">
-          {children}
+        <div className="w-full h-full p-10 overflow-auto">
+          <div className="text-xs md:text-sm">{children}</div>
           <Footer />
         </div>
       </body>

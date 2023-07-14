@@ -74,9 +74,9 @@ export default function GetInTouch() {
 
   console.log(sending, "sending");
   return (
-    <>
+    <div className="h-full overflow-hidden">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="p-10 ">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="p-10 h-full ">
           <div className="mx-auto md:max-w-xl lg:mr-0 lg:max-w-lg">
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 md:grid-cols-2">
               <div className="text-slate-900 font-semibold text-sm leading-6">
@@ -179,20 +179,20 @@ export default function GetInTouch() {
               )}
             </div>
           </div>
+          <div className="text-black p-10 text-xs opacity-80 ">
+            * Odesláním tohoto formuláře souhlasíte se zpracováním osobních
+            údajů. Více o ochraně osobních údajů a Vašich právech naleznete (
+            <Link
+              href="/consent"
+              target={"_blank"}
+              className="underline hover:text-blue-500 cursor-pointer"
+            >
+              zde
+            </Link>
+            ) .
+          </div>
         </form>
       </Form>
-      <div className="text-black p-10 text-xs opacity-80">
-        * Odesláním tohoto formuláře souhlasíte se zpracováním osobních údajů.
-        Více o ochraně osobních údajů a Vašich právech naleznete (
-        <Link
-          href="/consent"
-          target={"_blank"}
-          className="underline hover:text-blue-500 cursor-pointer"
-        >
-          zde
-        </Link>
-        ) .
-      </div>
-    </>
+    </div>
   );
 }

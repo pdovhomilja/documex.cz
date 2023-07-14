@@ -1,4 +1,3 @@
-import Container from "@/app/components/Container";
 import H2Title from "@/components/typography/h2";
 import Heading from "@/components/ui/heading";
 import Image from "next/image";
@@ -20,7 +19,7 @@ const ReferencePage = () => {
       />
       <div className="p-5">
         <H2Title>Kdo již proužívá produkt SpisUm?</H2Title>
-        <div className="flex flex-col md:flex-row w-full justify-center items-center mx-auto ">
+        <div className="grid grid-flow-row lg:grid-flow-col w-full justify-center items-center mx-auto ">
           <Image
             src="/images/reference-1.png"
             alt="reference"
