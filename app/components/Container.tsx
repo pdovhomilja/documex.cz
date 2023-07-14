@@ -10,9 +10,11 @@ interface ContainerProps {
 
 const Container = ({ title, description, children }: ContainerProps) => {
   return (
-    <div className="flex-1 space-y-4 p-8 pt-6 h-full overflow-hidden">
+    <div className="flex-1 space-y-4 md:p-8 pt-6 h-full overflow-hidden">
       <Heading title={title} description={description} />
-      <div className="text-sm h-full overflow-auto pb-32 px-5">{children}</div>
+      <div className="text-sm h-full overflow-auto pb-32 md:px-5">
+        {children}
+      </div>
     </div>
   );
 };

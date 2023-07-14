@@ -11,8 +11,8 @@ export default function ContactPage() {
       title="Spojete se s námi"
       description="Rádi s Vámi probereme Vaše požadavky osobně nebo přes online meeting. Domluvte si s námi schůzku"
     >
-      <div className="flex w-full max-w-7xl h-full">
-        <div className="w-1/2 p-10">
+      <div className="flex flex-col md:flex-row w-full max-w-7xl h-full">
+        <div className="text-xs md:w-1/2 md:p-10">
           <H2Title>Neváhejte nás kontaktovat</H2Title>
           <div>
             <p className="mt-6 text-lg leading-8 text-gray-600">
@@ -70,7 +70,7 @@ export default function ContactPage() {
             </dl>
           </div>
         </div>
-        <div className="w-1/2 p-10">
+        <div className="md:w-1/2 md:p-10">
           <H2Title>Kontaktní formulář</H2Title>
           <GetInTouch />
         </div>

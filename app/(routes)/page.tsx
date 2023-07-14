@@ -41,7 +41,7 @@ const HomePage = () => {
       {/* Comment */}
       <Separator />
       <H2Title>Náš přístup</H2Title>
-      <div className="grid grid-cols-2 py-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 py-10">
         <p className="border rounded-md m-3 p-3 shadow-md">
           <Balancer>
             Digitalizace je v našem DNA - jsme společnost, která vám pomůže

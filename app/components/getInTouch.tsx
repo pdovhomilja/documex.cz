@@ -72,8 +72,8 @@ export default function GetInTouch() {
     <>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onValid)} className="p-10 ">
-          <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
-            <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+          <div className="mx-auto md:max-w-xl lg:mr-0 lg:max-w-lg">
+            <div className="grid grid-cols-1 gap-x-8 gap-y-6 md:grid-cols-2">
               <div className="text-slate-900 font-semibold text-sm leading-6">
                 <FormField
                   control={form.control}
@@ -156,12 +156,22 @@ export default function GetInTouch() {
               </div>
             </div>
             <div className="mt-8 flex justify-end">
-              <button
-                type="submit"
-                className="rounded-md bg-[#4154B3] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
-                Odeslat
-              </button>
+              {sending ? (
+                <button
+                  type="submit"
+                  className="rounded-md bg-[#4154B3] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                >
+                  Odeslat
+                </button>
+              ) : (
+                <button
+                  type="submit"
+                  disabled={sending}
+                  className="rounded-md bg-[#4154B3] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 animate-pulse"
+                >
+                  Odesílám ....
+                </button>
+              )}
             </div>
           </div>
         </form>
