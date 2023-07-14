@@ -38,7 +38,7 @@ const HomePage = () => {
         </Link>
         )
       </div>
-
+      {/* Comment */}
       <Separator />
       <H2Title>Náš přístup</H2Title>
       <div className="grid grid-cols-2 py-10">
