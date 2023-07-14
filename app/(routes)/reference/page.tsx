@@ -1,12 +1,14 @@
 import Container from "@/app/components/Container";
 import H2Title from "@/components/typography/h2";
+import Heading from "@/components/ui/heading";
 import Image from "next/image";
 
 const ReferencePage = () => {
   return (
-    <Container
-      title="Reference"
-      description="V Documexu se zaměřujeme na distribuci a implementaci moderních řešení
+    <>
+      <Heading
+        title="Reference"
+        description="V Documexu se zaměřujeme na distribuci a implementaci moderních řešení
       pro správu a archivaci dokumentů, které pomáhají našim zákazníkům
       zefektivnit své pracovní procesy a zlepšit úroveň digitální správy svých
       dokumentů. Na této stránce si můžete přečíst několik případových studií,
@@ -15,7 +17,7 @@ const ReferencePage = () => {
       ke zlepšení vaší firemní efektivity. Pokud máte zájem o naše služby,
       neváhejte nás kontaktovat a rádi vám poskytneme další informace
     "
-    >
+      />
       <div className="p-5">
         <H2Title>Kdo již proužívá produkt SpisUm?</H2Title>
         <div className="flex flex-col md:flex-row w-full justify-center items-center mx-auto ">
@@ -57,7 +59,7 @@ const ReferencePage = () => {
           />
         </div>
       </div>
-    </Container>
+    </>
   );
 };
 

@@ -2,6 +2,7 @@ import Container from "@/app/components/Container";
 import Carousel from "@/components/Carousel";
 import H2Title from "@/components/typography/h2";
 import H3Title from "@/components/typography/h3";
+import Heading from "@/components/ui/heading";
 import React from "react";
 import Balancer from "react-wrap-balancer";
 
@@ -26,11 +27,12 @@ const ProductsPage = (props: Props) => {
   ];
 
   return (
-    <Container
-      title="SpisUm - elektronická spisová služba"
-      description="první řešení pro výkon elektronické spisové služby vytvořené
-      podle nových standardů ČR"
-    >
+    <>
+      <Heading
+        title="SpisUm - elektronická spisová služba"
+        description="první řešení pro výkon elektronické spisové služby vytvořené
+         podle nových standardů ČR"
+      />
       <div>
         <div className="p-5 ">
           <Balancer>
@@ -123,7 +125,7 @@ const ProductsPage = (props: Props) => {
           </p>
         </div>
       </div>
-    </Container>
+    </>
   );
 };
 

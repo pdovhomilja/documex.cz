@@ -4,15 +4,17 @@ import GetInTouch from "@/app/components/getInTouch";
 import { BuildingOffice2Icon, EnvelopeIcon } from "@heroicons/react/24/outline";
 import { PhoneIcon } from "lucide-react";
 import H2Title from "@/components/typography/h2";
+import Heading from "@/components/ui/heading";
 
 export default function ContactPage() {
   return (
-    <Container
-      title="Spojete se s námi"
-      description="Rádi s Vámi probereme Vaše požadavky osobně nebo přes online meeting. Domluvte si s námi schůzku"
-    >
+    <>
+      <Heading
+        title="Spojete se s námi"
+        description="Rádi s Vámi probereme Vaše požadavky osobně nebo přes online meeting. Domluvte si s námi schůzku"
+      />
       <div className="flex flex-col md:flex-row w-full max-w-7xl h-full">
-        <div className="text-xs md:w-1/2 md:p-10">
+        <div className="text-xs md:w-1/2 md:p-10 h-full">
           <H2Title>Neváhejte nás kontaktovat</H2Title>
           <div>
             <p className="mt-6 text-lg leading-8 text-gray-600">
@@ -70,11 +72,11 @@ export default function ContactPage() {
             </dl>
           </div>
         </div>
-        <div className="md:w-1/2 md:p-10">
+        <div className="md:w-1/2 md:p-10 h-full overflow-hidden">
           <H2Title>Kontaktní formulář</H2Title>
           <GetInTouch />
         </div>
       </div>
-    </Container>
+    </>
   );
 }
