@@ -36,7 +36,7 @@ export default function GetInTouch() {
 
   const [sending, setSending] = useState(false);
 
-  const schema: ZodType<FormData> = z.object({
+  const FormSchema: ZodType<FormData> = z.object({
     firstName: z.string().min(2).max(50),
     lastName: z.string().min(2).max(50),
     email: z.string().email(),
@@ -44,10 +44,12 @@ export default function GetInTouch() {
     message: z.string().min(2).max(500),
   });
 
-  const form = useForm<FormData>({ resolver: zodResolver(schema) });
+  const form = useForm<z.infer<typeof FormSchema>>({
+    resolver: zodResolver(FormSchema),
+  });
 
-  const onValid = useCallback(
-    async (data: FormData) => {
+  async function onSubmit(data: z.infer<typeof FormSchema>) {
+    try {
       setSending(true);
       await fetch("/api/sendmail/contact", {
         method: "POST",
@@ -64,14 +66,17 @@ export default function GetInTouch() {
         .then(() => {
           setSending(false);
         });
-    },
-    [router]
-  );
+    } catch (error) {
+    } finally {
+      setSending(false);
+    }
+  }
 
+  console.log(sending, "sending");
   return (
     <>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onValid)} className="p-10 ">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="p-10 ">
           <div className="mx-auto md:max-w-xl lg:mr-0 lg:max-w-lg">
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 md:grid-cols-2">
               <div className="text-slate-900 font-semibold text-sm leading-6">
@@ -156,7 +161,7 @@ export default function GetInTouch() {
               </div>
             </div>
             <div className="mt-8 flex justify-end">
-              {sending ? (
+              {!sending ? (
                 <button
                   type="submit"
                   className="rounded-md bg-[#4154B3] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
