@@ -18,12 +18,42 @@ const ReferencePage = () => {
     >
       <div className="p-5">
         <H2Title>Kdo již proužívá produkt SpisUm?</H2Title>
-        <div className="absolute flex mx-auto w-1/2 h-56 ">
+        <div className="flex flex-col md:flex-row w-full justify-center items-center mx-auto ">
           <Image
-            src="/images/reference.png"
+            src="/images/reference-1.png"
             alt="reference"
-            fill
-            className="relative object-contain"
+            width={200}
+            height={200}
+          />
+          <Image
+            src="/images/reference-2.png"
+            alt="reference"
+            width={200}
+            height={200}
+          />
+          <Image
+            src="/images/reference-3.png"
+            alt="reference"
+            width={200}
+            height={200}
+          />
+          <Image
+            src="/images/reference-4.png"
+            alt="reference"
+            width={200}
+            height={200}
+          />
+          <Image
+            src="/images/reference-5.png"
+            alt="reference"
+            width={200}
+            height={200}
+          />
+          <Image
+            src="/images/reference-6.png"
+            alt="reference"
+            width={200}
+            height={200}
           />
         </div>
       </div>
